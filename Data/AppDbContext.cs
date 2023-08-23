@@ -18,17 +18,6 @@ namespace hotelsimorgh.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // release version
-            //optionsBuilder.UseSqlServer("Data Source=31.25.91.22;TrustServerCertificate=True;User ID=sobahnju_hotel;Password=@13931393Pa");
-            //optionsBuilder.UseSqlServer("Data Source=.;TrustServerCertificate=True;User ID=sobahnju_hotel;Password=@13931393Pa");
-
-            //demo version on peymanakhtari.com
-            //optionsBuilder.UseSqlServer("Data Source=144.76.184.174\\sqlserver2019;TrustServerCertificate=True;User ID=sobahnju_artemisdemo;Password=@13931393Pa");
-            optionsBuilder.UseSqlServer("Data Source=.\\sqlserver2019;TrustServerCertificate=True;User ID=sobahnju_artemisdemo;Password=@13931393Pa");
-
-
-
-
         }
     }
 }
