@@ -1,0 +1,323 @@
+:root {
+  --color1: rgb(206, 206, 206);
+  --color2: rgb(68, 68, 68);
+  --color3: rgb(34, 34, 34);
+  --color4: rgb(146, 146, 146);
+  --colorFull: rgb(0, 83, 0);
+  --colorPast: rgb(17, 17, 17);
+  --colorReserve: rgb(134, 0, 0);
+  --colorFullHover: rgb(64, 134, 64);
+  --colorPastHover: rgb(58, 58, 58);
+  --colorReserveHover: rgb(168, 57, 57);
+  --roomSeprator: 6px;
+  --colorRoomSeprator: rgb(0, 247, 255);
+}
+td {
+  position: relative;
+}
+th a {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+th a:hover {
+  color: black;
+}
+th a:hover:not(.nohover) {
+  color: white;
+  background-color: var(--color2);
+}
+.nohover {
+  cursor: auto;
+}
+th {
+  height: 4rem;
+  min-width: 2rem;
+  padding: 0 !important;
+  position: sticky;
+  border: 1px solid rgb(216, 216, 216);
+  top: 0;
+}
+
+tbody {
+  background-color: white;
+}
+
+td a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 2rem;
+  color: black;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  padding: 2.6px;
+}
+td a:hover {
+  color: black;
+}
+td a:not(.showText) {
+  text-indent: -9999px;
+}
+
+td {
+  border: 1px solid rgb(216, 216, 216);
+  padding: 0;
+}
+
+.hover-column,
+.hover-row {
+  background-color: lightgray;
+}
+.hover-row .fill,
+.hover-column .fill {
+  background-color: var(--colorFullHover);
+}
+
+.hover-row .reserve,
+.hover-column .reserve {
+  background-color: var(--colorReserveHover);
+}
+.hover-row .past,
+.hover-column .past {
+  background-color: var(--colorPastHover);
+}
+.hover-cell {
+  background-color: darkgray;
+}
+td a:not(.showText, .fill, .hafDay, .reserve, .past):focus {
+  background-color: rgb(136, 136, 136);
+}
+
+.hafDay {
+  clip-path: polygon(0% 100%, 55% 70%, 100% 0%, 0% 0%);
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.fill {
+  background-color: var(--colorFull);
+  color: rgb(221, 221, 221);
+}
+.reserve {
+  background-color: var(--colorReserve);
+  color: rgb(221, 221, 221);
+}
+.past {
+  background-color: var(--colorPast);
+  color: rgb(221, 221, 221);
+}
+.hoverReservesLink:hover {
+  background-color: var(--color2) !important;
+  color: rgb(231, 231, 231);
+}
+thead tr th {
+  background-color: var(--color1);
+}
+
+.date {
+  background-color: var(--color1);
+}
+.dayOfWeek {
+  background-color: var(--color1);
+}
+.hover-row .dayOfWeek {
+  background-color: var(--color4);
+}
+.colorGuid span:nth-child(1) {
+  background-color: black;
+}
+.colorGuid span:nth-child(2) {
+  background-color: var(--color3);
+}
+.colorGuid span {
+  color: white;
+  padding: 8px 1.2rem;
+  border-radius: 6px;
+  margin: 4px;
+}
+form {
+  margin-bottom: 0;
+}
+#datepicker_range_reserveTable {
+  margin: 4px !important;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+form > button {
+  margin: 8px;
+}
+
+.fixedTr th {
+  background-color: var(--color1) !important;
+  z-index: 99;
+}
+
+button:disabled,
+button[disabled] {
+  opacity: 0.7;
+}
+
+.alertBox {
+  background-color: rgb(240, 240, 240);
+  color: rgb(14, 14, 14);
+  padding: 1rem;
+  border-radius: 4px;
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto 2rem auto;
+}
+.alertDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.alertWrapper::after {
+  content: "";
+  flex: auto;
+}
+.folioAlert {
+  background-color: rgba(199, 199, 199, 0.329);
+  margin: 10px 12px;
+  margin-top: 3rem;
+  padding: 0.5rem;
+  border: 1px solid rgb(22, 22, 22);
+  border-radius: 6px;
+  border-top-right-radius: 0;
+  width: 9.7rem;
+  height: 8rem;
+  position: relative;
+}
+.folioAlert a {
+  text-decoration: none;
+  color: black;
+}
+.folioAlert a:hover {
+  opacity: 0.7;
+}
+.titleAlert {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.roomAlert {
+  position: absolute;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  padding: 3px 9px;
+  top: -30px;
+  right: -1px;
+  border-top-right-radius: 6px;
+}
+.Code {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+.Name {
+  display: block;
+  margin-top: 4px;
+}
+
+.HourHafDay {
+  font-weight: bold;
+  display: block;
+  margin-top: 4px;
+}
+.alertCheck {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 6rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.notchecked i {
+  display: none;
+}
+.isChecked {
+  background-color: rgba(0, 255, 0, 0.4);
+}
+.isChecked i {
+  display: inline-block;
+}
+.notchecked {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+@media only screen and (max-width: 990px) {
+  .folioAlert {
+    scale: 0.8;
+    margin: -6px;
+    margin-top: 2.5rem;
+  }
+  :root {
+    --roomSeprator: 4.5px;
+  }
+  th {
+    outline: 1px solid rgb(216, 216, 216);
+  }
+}
+
+.RowIsNow {
+  border-top: 5px solid black;
+  /* border-bottom: 4px solid bl; */
+}
+
+.todayRow {
+  background-color: rgb(10, 10, 10);
+  color: rgb(219, 219, 219);
+}
+
+
+/* #alertUseDesktop{
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.589);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#alertUseDesktop > div{
+background-color: white;
+width: 92%;
+max-width: 30rem;
+height: 20rem;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#alertUseDesktop p{
+  text-align: left;
+}
+#alertUseDesktop button{
+  padding: 8px 1.3rem;
+  margin: auto;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.911);
+  color: rgba(255, 255, 255, 0.932);
+  border: none;
+  border-radius: 12px;
+}
+#alertUseDesktop button:hover{
+  opacity: .7;
+} */

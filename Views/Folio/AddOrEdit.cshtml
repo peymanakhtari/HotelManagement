@@ -1,0 +1,269 @@
+﻿@using Newtonsoft.Json
+@model FolioModel
+@{
+    string title = (ViewBag.edit) ? "ویرایش فولیو" : "ثبت فولیو";
+    ViewData["Title"] = title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+<link rel="stylesheet" href="/css/AddOrEditFolio.css">
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    label {
+        margin: 2px;
+    }
+</style>
+<br />
+<br />
+<h3 class="text-center text-white">@title  </h3>
+<div class=" mainContainerFolio">
+    @if (Model == null || Model.Folio.PreReserve)
+    {
+        <div style="transform:scale(1.2) translate(-9%,0);width:6rem">
+            <label for="preReserve"> رزرو</label>
+            <input tabindex="-1" checked="@(Model?.Folio?.PreReserve ?? false)" class="form-check-input me-2"
+                   style="transform: scale(1.4);" id="preReserve" type="checkbox" />
+        </div>
+    }
+    <div class="inputContainerFolio">
+        <form id="frmNew" action="/Folio/AddOrEdit" method="post">
+            <input type="text" class="d-none" name="returnUrl" value="@ViewBag.returnUrl">
+            <input class="d-none" name="Folio.Id" value="@(Model?.Folio?.Id ?? 0)" type="number">
+            <div class="inputGroup">
+                @if (Model != null)
+                {
+                    <div class="inputDiv">
+                        <label for="" class="form-lable d-block">کد </label>
+                        <input readonly value="@(Model.Folio.Id)"
+                               tabindex="1" type="text" class="form-control">
+                    </div>
+                }
+                <div class="inputDiv">
+                    <label for="" class="form-lable d-block">نام </label>
+                    <input required value="@(Model?.Folio?.Name ?? string.Empty)"
+                           name="Folio.Name" tabindex="1" type="text" class="form-control">
+                </div>
+                <div class="inputDiv">
+                    <label for="" class="form-lable d-block">نام خانوادگی </label>
+                    <input required value="@(Model?.Folio?.Family ?? string.Empty)" name="Folio.Family" tabindex="2" type="text"
+                           class="form-control ">
+                </div>
+                <div class="inputDiv">
+                    <label for="" class="form-lable d-block">موبایل</label>
+                    <input required minlength="10" maxlength="10" dir="ltr" id="txtMobile" value="@(Model?.Folio?.Mobile ?? string.Empty)" name="Folio.Mobile" tabindex="3"
+                           type="text" class="form-control">
+                </div>
+                <div class="inputDiv">
+                    <label for="" class="form-lable d-block">نام پدر </label>
+                    <input required value="@(Model?.Folio?.FatherName ?? string.Empty)" name="Folio.FatherName" tabindex="3"
+                           type="text" class="form-control">
+                </div>
+                <div class="inputDiv">
+                    <label for="" class="form-lable d-block"> کد ملی </label>
+                    <input id="txtNationalCode" required minlength="10" maxlength="10" dir="ltr" value="@(Model?.Folio?.NationalCode ?? string.Empty)" name="Folio.NationalCode" tabindex="3"
+                           type="text" class="form-control">
+                </div>
+
+
+            </div>
+
+            <div class="inputGroup">
+                <div class="inputDiv address">
+                    <label for="" class="form-lable d-block">آدرس </label>
+                    <textarea required tabindex="4" name="Folio.Address" rows="3"
+                              class="form-control d-inline-block">@(Model?.Folio?.Address ?? string.Empty)</textarea>
+                </div>
+                <div class="inputDiv carModel">
+                    <label>مدل خودرو</label>
+                    <input value="@(Model?.Folio?.CarModel ?? string.Empty)" class="form-control d-inline-block" name="Folio.CarModel" tabindex="5" />
+                </div>
+                <div class="inputDiv inputsPekal" style="width: 300px;">
+                    <label for="" class="form-lable d-block">پلاک خودرو </label>
+                    <input dir="ltr" value="@(Model?.Folio?.Pelak1 ?? string.Empty)" name="Folio.Pelak1" tabindex="8"
+                           type="number" style="width: 4rem;" class="form-control d-inline-block">
+                    <input dir="ltr" value="@(Model?.Folio?.Pelak2 ?? string.Empty)" name="Folio.Pelak2" tabindex="7"
+                           type="number" style="width: 6rem;" class="form-control d-inline-block">
+                    <input value="@(Model?.Folio?.Pelak3 ?? string.Empty)" name="Folio.Pelak3" tabindex="6"
+                           style="width: 3rem;" type="text" class="form-control d-inline-block">
+                    <input dir="ltr" value="@(Model?.Folio?.Pelak4 ?? string.Empty)" name="Folio.Pelak4" tabindex="5"
+                           type="number" style="width: 4rem;" class="form-control d-inline-block">
+                    <label for="" class="form-lable d-block">ایران </label>
+                </div>
+
+
+                <div class="inputDiv carModel">
+                    <label for="" class="form-lable d-block "> پذیرش کننده </label>
+                    <select required name="Folio.receptionistId" class="form-select form-select mb-3"
+                            aria-label=".form-select-lg example">
+
+                        <option value="" selected="false">انتخاب کنید</option>
+
+
+                        @foreach (var item in (List<User>)ViewBag.receptionists)
+                        {
+                            @if (Model == null)
+                            {
+                                <option value="@(item.Id)"
+                                        selected="@(ViewBag.UserId == item.Id ? true :false)">
+                                    @item.Name
+                                </option>
+                            }
+                            else
+                            {
+                                if (Model.Folio.receptionistId == null)
+                                {
+                                    <option value="@(item.Id)"
+                                            selected="@(ViewBag.UserId == item.Id ? true :false)">
+                                        @item.Name
+                                    </option>
+                                }
+                                else
+                                {
+                                    <option value="@(item.Id)"
+                                            selected="@(Model.Folio.receptionistId == item.Id ? true :false)">
+                                        @item.Name
+                                    </option>
+                                }
+
+                            }
+                        }
+                    </select>
+                </div>
+
+            </div>
+            <div class="inputGroup description">
+                <div class="inputDiv address ">
+                    <label for="Description" class="form-lable d-block">توضیحات </label>
+                    <textarea tabindex="-1" name="Folio.Description" rows="3"
+                              id="Description" class="form-control d-inline-block">@(Model?.Folio?.Description ?? string.Empty)</textarea>
+
+                </div>
+                <div class="inputDiv">
+                    <label for="Bedehkar"> تسویه نشده</label>
+                    <input name="Folio.Bedehkar" id="Bedehkar" tabindex="-1" checked="@(Model?.Folio?.Bedehkar ?? false)" class="form-check-input me-2 Bedehkar" type="checkbox" />
+                </div>
+
+            </div>
+            <div style="display:none" id="titleNoPassengers" class="text-white mx-1 my-3 fs-5">
+                این مسافر همراه ندارد
+            </div>
+            <div class="inputDiv">
+                <input type="button" value="افزودن مسافر همراه" tabindex="-1" id="addPassenger"
+                       class="btn btn-primary px-3" />
+            </div>
+            <div style="display:none" id="titleHasPassengers" class="text-white me-4 mt-3 mb-1  fs-5">
+                مسافرین همراه:
+            </div>
+            <div id="PassengerContainer">
+                @if (Model != null)
+                {
+                    int index = 1;
+                    int indexofmodel = 0;
+                    foreach (var item in Model.Folio.passengers)
+                    {
+                        <div id="passenger-@index">
+                            <div class="text-white"></div>
+                            <div class="inputDiv">
+                                <label for="" class="form-lable d-block"> @(Model.Folio.passengers.ToList().IndexOf(item) + 1)- نام </label>
+                                <input required name="[@indexofmodel].Name" value="@item.Name" type="text"
+                                       class="form-control d-inline-block">
+                            </div>
+                            <div class="inputDiv">
+                                <label for="" class="form-lable d-block">نام خانوادگی </label>
+                                <input required name="[@indexofmodel].Family" value="@item.Family" type="text"
+                                       class="form-control d-inline-block">
+                            </div>
+                            <div class="inputDiv">
+                                <label for="" class="form-lable d-block">نام پدر </label>
+                                <input required name="[@indexofmodel].FatherName" value="@item.FatherName" type="text"
+                                       class="form-control d-inline-block">
+                            </div>
+                            <div class="inputDiv">
+                                <label for="" class="form-lable d-block"> کد ملی </label>
+                                <input required dir="ltr" min="999999999" max="10000000000" name="[@indexofmodel].NationalCode" value="@item.NationalCode" type="number"
+                                       class="form-control d-inline-block">
+                            </div>
+                            <span id="delete-@index" class="deletePassenger"><i class="bi bi-trash"></i></span>
+                        </div>
+                        { index++; indexofmodel++; }
+                    }
+                }
+
+            </div>
+       
+                <div  class="inputDiv  mt-3">
+                    <button tabindex="-1" type="submit" class="btn btn-success  btnSubmitFolio"> ثبت</button>
+                </div>
+        </form>
+        <form style="display: none;" id="frmPre" action="/Folio/AddOrEditPreReserve" method="post">
+            <input type="text" class="d-none" name="returnUrl" value="@ViewBag.returnUrl">
+
+            @if (Model != null)
+            {
+                <input type="text" class="d-none" name="Folio.Id" value="@(Model.Folio.Id)">
+            }
+
+
+            <div class="inputGroup">
+                @if (Model != null)
+                {
+                    <div class="inputDiv">
+                        <label for="" class="form-lable d-block">کد </label>
+                        <input readonly value="@(Model.Folio.Id)"
+                               tabindex="1" type="text" class="form-control">
+                    </div>
+                }
+                <div class="inputDiv">
+                    <label for="" class="form-lable d-block">نام </label>
+                    <input name="Folio.Name" value="@(Model?.Folio?.Name ?? string.Empty)" tabindex="1" type="text"
+                           class="form-control d-inline-block">
+                </div>
+                <div class="inputDiv">
+                    <label for="" class="form-lable d-block">نام خانوادگی </label>
+                    <input required name="Folio.Family" value="@(Model?.Folio?.Family ?? string.Empty)" tabindex="2" type="text"
+                           class="form-control d-inline-block">
+                </div>
+
+                <div class="inputDiv">
+                    <label for="" class="form-lable d-block">موبایل</label>
+                    <input required minlength="10" maxlength="10" dir="ltr" id="txtMobile1" name="Folio.Mobile" value="@(Model?.Folio?.Mobile ?? string.Empty)" tabindex="3"
+                           type="text" class="form-control d-inline-block ">
+                </div>
+
+            </div>
+            <div class="inputGroup">
+                <div class="inputDiv address">
+                    <label for="Description" class="form-lable d-block">توضیحات </label>
+                    <textarea tabindex="-1" name="Folio.Description" rows="4"
+                              id="Description" class="form-control d-inline-block">@(Model?.Folio?.Description ?? string.Empty)</textarea>
+
+                </div>
+                <div class="inputDiv ">
+                    <label for="Bedehkar1"> تسویه نشده</label>
+                    <input name="Folio.Bedehkar" id="Bedehkar1" tabindex="-1" checked="@(Model?.Folio?.Bedehkar ?? false)" class="form-check-input me-2 Bedehkar" type="checkbox" />
+                </div>
+            </div>
+            <div class="mt-4 me-2 ">
+                <button type="submit" class="btn btn-success px-5 btnSubmitFolio"> ثبت</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/inputValidator.js"></script>
+
+<br>
+<br>
+<br>
+<br>

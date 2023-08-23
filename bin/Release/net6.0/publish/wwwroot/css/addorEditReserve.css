@@ -1,0 +1,95 @@
+﻿input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#datepicker {
+  width: 18rem;
+}
+
+input {
+  display: inline-block;
+  width: 11rem !important;
+}
+
+select {
+  width: 11rem !important;
+}
+
+.inputDiv {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+input[name="FolioId"] {
+  max-width: 5rem;
+}
+
+input[name="numberOfDays"] {
+  max-width: 12rem;
+}
+
+#btnSearchFolioByCode {
+  width: 6rem;
+}
+
+.folioId div {
+  display: inline-block;
+}
+
+.folioId {
+  width: 12rem;
+}
+
+#frmReserve {
+  text-align: right;
+}
+
+.inputGroup {
+  margin-top: 2rem;
+  text-align: center !important;
+}
+label {
+  margin: 6px;
+}
+
+@media only screen and (max-width: 768px) {
+  .inputDiv {
+    display: block;
+  }
+
+  .inputDiv {
+    margin-top: 8px;
+  }
+  #btnSubmitReserve {
+    margin-top: 1rem;
+  }
+  .inputGroup {
+    margin-top: 1rem;
+    text-align: right !important;
+  }
+  #frmReserve {
+    width: 20rem;
+    margin: auto;
+  }
+  #frmReserveHafDay {
+    width: 20rem;
+    margin: auto;
+  }
+}
+
+.inputHafReserveInfo {
+  background-color: var(--colorDarkMode);
+  color: white;
+  max-width: 6rem;
+}
+.hafReserveInfo {
+  color: white;
+  background-color: var(--colorDarkMode);
+}

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Reserve>
+@{
+    ViewData["Title"] = "گزارش رزروها";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/reportTables.css">
+<br />
+<br />
+<br />
+<h3 class="text-center text-white">گزارش گیری رزروها  </h3>
+
+<br />
+<input type="text" class="d-none" id="reserveDate" value="@ViewBag.Date">
+<input type="text" class="d-none" id="reserveSubmitDate" value="@ViewBag.SubmitDate">
+<div>
+
+    <div id="filterContainer">
+        <form action="/Report/Reserve">
+            <button class="btn btn-secondary btnSearch">جستجو</button>
+            <div style="width: 18rem;" class=" d-inline-block" id="datepicker_range_reportReserve">
+                <date-picker label="  تاریخ رزرو:" shortcut @@Select="select"></date-picker>
+            </div>
+            <div style="width: 18rem;" class=" d-inline-block" id="datepicker_range_submitDate">
+                <date-picker label="  تاریخ ثبت:" shortcut @@Select="select"></date-picker>
+            </div>
+            <div style="width:10rem" class="d-inline-block">
+                <label class="m-1" for="fromPrice">از مبلغ:</label>
+                <input value="@ViewBag.minPrice" dir="ltr" id="fromPrice" name="minPrice" type="number" class="form-control">
+            </div>
+            <div style="width:10rem" class="d-inline-block">
+                <label class="m-1" for="toPrice">تا مبلغ:</label>
+                <input value="@ViewBag.maxPrice" dir="ltr" id="toPrice" name="maxPrice" type="number" class="form-control">
+            </div>
+            <div style="width:10rem" class="d-inline-block">
+                <label class="m-1" style="visibility:hidden" for="toPrice">تا مبلغ:</label>
+                <input placeholder="سرچ" id="filterTable" type="text" class="form-control">
+            </div>
+            <div style="width:10rem" class="d-inline-block">
+                <label class="m-1" style="visibility:hidden" for="toPrice">تا مبلغ:</label>
+                <button type="button" onclick="ExportToExcel()" class="btn btn-success ">دریافت فایل اکسل</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="tableContainer">
+        <table id="tableReportReserve" class="tableData">
+            <tr>
+                <th>تاریخ</th>
+                <th>اتاق</th>
+                <th>نام و نام خانوادگی</th>
+                <th>فولیو</th>
+                <th>موبایل</th>
+                <th>پذیرش کننده</th>
+                <th>وبسایت</th>
+                <th>مبلغ</th>
+                <th>نیمروز</th>
+                <th> ثبت کننده</th>
+                <th>تاریخ  ثبت</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Date.ToShamsi().ToStringPersianDateTime()</td>
+                    <td>@item.Room.Number</td>
+                    <td>@(item.Folio.Name + " " + item.Folio.Family)</td>
+                    <td>@item.FolioId</td>
+                    <td>@item.Folio.Mobile</td>
+                    <td>@((item.Folio.receptionistId != null) ? ((List<User>)ViewBag.receptionists).First(x => x.Id == item.Folio.receptionistId).Name : "")</td>
+                    <td>@((item.WebsiteId != 0) ? ((List<Website>)ViewBag.websites).First(x => x.Id == item.WebsiteId).Name : "")</td>
+                    <td>@item.Price</td>
+                    <td>@((item.HafDay) ? "نیمروز" : "")</td>
+                    <td>@item.User.Name</td>
+                    <td>@(item.SubmitDate.ToShamsi().ToStringPersianDateTime() + " --- " + item.SubmitDate.Hour + ":" + item.SubmitDate.Minute)</td>
+                </tr>
+            }
+        </table>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+
+<script src="~/js/datepicker_report_reserve.js"></script>

@@ -1,0 +1,48 @@
+﻿@model Reserve
+@{
+    ViewData["Title"] = "تغییر اتاق";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+<input type="text"class="d-none" id="family" value="@ViewBag.ReserveIntersection">
+<h4 class="text-center text-white">  تغییر اتاق رزرو  @ViewBag.family</h4>
+<div class="mx-auto text-center">
+    <form action="/Folio/ChangeRoom" method="post">
+        <input type="text" name="returnurl" class="d-none" id="returnurl" value="@ViewBag.returnUrl">
+        <input type="text" name="folioId" class="d-none" id="reserveDate" value="@ViewBag.folioId">
+        <input type="text" name="oldRoomId" class="d-none" id="reserveDate" value="@Model.RoomId">
+        <select style="width:6rem" name="NewRoomId" id="RoomId" class="form-select form-select mb-4 mt-4 mx-auto"
+                aria-label=".form-select-lg example">
+            <option value="0" selected="@(Model == null && ViewBag.roomId==0? true :false)">انتخاب کنید</option>
+            @foreach (var item in (List<Room>)ViewBag.rooms)
+            {
+                @if (Model != null)
+                {
+                    <option selected="@(Model.RoomId == item.Id ? true :false)" value="@item.Id">
+                        @item.Number
+                    </option>
+                }
+            }
+
+        </select>
+        <button type="submit" class="btn btn-success mx-auto px-5 d-inline-block">ثبت</button>
+    </form>
+</div>
+
+
+@if (ViewBag.ReserveIntersection !=null)
+{
+    <text>
+        <script>
+            $(document).ready(function(){
+                var value = $('#family').val();
+                alert(`  با رزرو ${value} تداخل دارد  `)
+            })
+
+        </script>
+  </text>
+}

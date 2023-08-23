@@ -1,0 +1,243 @@
+﻿@model List<ReserveRow>
+@{
+    ViewData["Title"] = "نمای کلی اتاق‌ها ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var alerts = (List<AlertCheck>)ViewBag.alert;
+    var rooms = (List<Room>)ViewBag.rooms;
+    List<int> bedtypesCount = new List<int>();
+    ReserveHelper helper = new ReserveHelper();
+    var capacities = helper.capacities(rooms);
+    var bedtypes = helper.bedtypes(rooms);
+    int count = 0;
+    foreach (var item in capacities)
+    {
+        count += rooms.Where(x => x.Capacity == item).Count();
+        bedtypesCount.Add(count);
+    }
+    //var alert = (List<AlertCheck>)ViewBag.checkAlert;
+    //alert.FirstOrDefault(x=>x.date==item.Date&&x.roomNumber==item.Room.Number)
+}
+<link rel="stylesheet" href="~/css/reserveTable.css">
+<br>
+<br>
+
+@*@foreach (var item in bedtypesCount)
+{
+    <style>
+
+        table tr td:nth-child(@(item + 2)),
+        th:nth-child(@(item + 2)) {
+            border-left: var(--roomSeprator) solid var(--colorRoomSeprator);
+        }
+    </style>
+
+}
+
+@foreach (var item in capacities)
+{
+    <style>
+        .bedCount th:nth-child(@(item + 2)) {
+            border-left: var(--roomSeprator) solid var(--colorRoomSeprator);
+        }
+    </style>
+}*@
+
+@*<style>
+
+    table tr td:nth-child(@(rooms.Count() + 2)),
+    th:nth-child(@(rooms.Count() + 2)) {
+        border-left: 1px solid gray;
+    }
+
+    .bedCount th:nth-child(@(bedtypes.Count + 2)) {
+        border-left: 1px solid gray;
+    }
+
+</style>*@
+
+@* <div id="alertUseDesktop">
+    <div>
+       <div>
+         <p>For better User Experience use Desktop</p>
+         <br>
+    <button >I understand</button>
+       </div>
+    </div>
+</div> *@
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <p>جهت تجربه کاربری بهتر از دسکتاپ استفاده کنید</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnCloseAlert" class="btn btn-secondary" data-dismiss="modal">فهمیدم</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="text" class="d-none" id="reserveDate" value="@ViewBag.Date">
+<h3 class="text-center text-white">   وضعیت اتاق‌ها</h3>
+<div class="text-white emptyRoomAlert">
+    <div class="alertBox">
+
+        <span class="titleAlert"> اتاق هایی که  <span style="border-radius:6px" class="text-light bg-dark p-1 px-2 ">امروز</span> تخلیه می‌شوند:</span>
+
+        <div class="alertDiv">
+            @foreach (var item in (List<Reserve>)ViewBag.leaveToday)
+            {
+                                                    <span class="folioAlert">
+                                                        <span class="roomAlert">
+                                                            <span>
+                            @item.Room.Number
+                                                            </span>
+                                                        </span>
+
+
+                                                        <a target="_blank" href="/Folio/Index?folioId=@item.FolioId" class="Code">@item.FolioId </a>
+                                                        <a target="_blank" href="/Home/Index?folioId=@item.FolioId" class="Name">@(item.Folio.Name + " " + item.Folio.Family)  </a>
+                                                        <span class="Name">@(item.Folio.Mobile)  </span>
+
+                    @if (item.HafDay)
+                    {
+                                                                                                <span class="HourHafDay"> @ViewBag.HafDayLeaveHour شب </span>
+                    }
+
+                                                        <span data-number="@item.Room.Number" data-date="@item.Date" class="alertCheck @(alerts.Any(x=>x.date==item.Date&&x.roomNumber==item.Room.Number)?"isChecked" :"notchecked") "><span>تخلیه شد<i class="bi bi-check fs-5 fw-bold "></i></span></span>
+                                                    </span>
+            }
+        </div>
+    </div>
+    <br />
+    <div class="alertBox">
+        <span class="titleAlert"> اتاق هایی که  <span style="border-radius:6px" class="text-light bg-dark p-1 px-2 ">فردا</span> تخلیه خواهند شد:</span>
+        <div class="alertDiv">
+            @foreach (var item in (List<Reserve>)ViewBag.leaveTomorrow)
+            {
+                                                    <span class="folioAlert">
+                                                        <span class="roomAlert">
+                                                            <span>
+                            @item.Room.Number
+                                                            </span>
+                                                        </span>
+
+
+                                                        <a target="_blank" href="/Folio/Index?folioId=@item.FolioId" class="Code">@item.FolioId </a>
+                                                        <a target="_blank" href="/Home/Index?folioId=@item.FolioId" class="Name">@(item.Folio.Name + " " + item.Folio.Family)  </a>
+                                                        <span class="Name">@(item.Folio.Mobile)  </span>
+                    @if (item.HafDay)
+                    {
+                                                                                                <span class="HourHafDay"> @ViewBag.HafDayLeaveHour شب </span>
+                    }
+
+                                                    </span>
+            }
+        </div>
+    </div>
+</div>
+<h3 class="text-center text-white">  نمای کلی اتاق‌ها</h3>
+
+<br>
+<div style="display:flex;justify-content:space-between;align-items:baseline" class="mb-2" id="filterBox">
+    <form action="/reserve/ReservesTable">
+        <button class="btn btn-secondary btnSearch">جستجو</button>
+        <div style="width: 17rem;" class=" d-inline-block" id="datepicker_range_reserveTable">
+            <date-picker shortcut @@Select="select"></date-picker>
+        </div>
+        <button type="button" id="calculateIncome" class="btn btn-info px-3">
+            محاسبه درآمد
+        </button>
+        <div class="me-2" style="display: inline-block; width: 8rem;">
+            <label for="showFolioCode"> فولیو بایگانی</label>
+            <input type="checkbox" id="showFolioCode" class="form-check-input">
+        </div>
+    </form>
+
+</div>
+<div class="tableFixHead primaryTable" style=" margin: auto;">
+    <table style="width: 100%;" class="tableData" id="myTable">
+        <thead>
+            <tr class="bedCount">
+                <th style="min-width: 4rem;"><a target="_blank" href="/Home/Index?dateRange=@ViewBag.Date">همه رزرو ها</a></th>
+                <th style="min-width: 4rem;">تعداد تخت <br>&#8592</th>
+                @foreach (var item in bedtypes)
+                {
+                                                        <th class="" colspan="@rooms.Where(x=>x.bed==item).Count()"><a href="/Home/Index?bedCount=@item&dateRange=@ViewBag.Date" target="_blank">@item.toPersianNumber() تخته</a></th>
+                }
+
+            </tr>
+            <tr>
+                <th style="min-width: 4rem;"></th>
+                <th style="min-width: 4rem;">ظرفیت <br>&#8592</th>
+                @foreach (var item in (List<Room>)ViewBag.rooms)
+                {
+                                                        <th><a class="preventDefault nohover">@item.Capacity <br /> نفر</a></th>
+                }
+            </tr>
+
+            <tr class="fixedTr">
+                <th style="min-width: 4rem;">تاریخ</th>
+                <th style="min-width: 4rem;">شماره اتاق <br>&#8592</th>
+                @foreach (var item in (List<Room>)ViewBag.rooms)
+                {
+                                                        <th><a target="_blank" href="/home/index?RoomId=@item.Number&dateRange=@ViewBag.Date">@item.Number</a></th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                                                    <tr class="@((item.Date=="1402/05/17".toPersianDateTime().ToMiladi())? "RowIsNow":"" )">
+                                                        <td>
+                                                            <a target="_blank" href="/home/index?dateRange=@item.Date.ToShamsi().ToStringPersianDateTime()-@item.Date.ToShamsi().ToStringPersianDateTime()"
+                                                               class="showText date hoverReservesLink @((item.Date.Date == "1402/05/17".toPersianDateTime().ToMiladi())?"todayRow":"")">@((item.Date.Date == "1402/05/17".toPersianDateTime().ToMiladi()) ? "امروز(به‌فرض)" : item.Date.ToShamsi().ToStringPersianDateTime())</a>
+                                                        </td>
+                                                        <td><a href="" class="showText dayOfWeek preventDefault">@item.Date.ToShamsi().PersianDayOfWeek()</a> </td>
+
+
+                    @foreach (var room in (List<Room>)ViewBag.rooms)
+                    {
+                        var pastRes = item.rooms.FirstOrDefault(x => x.number == room.Number && x.status == 1);
+                        var res = item.rooms.FirstOrDefault(x => x.number == room.Number && x.status == 2);
+                        var preRes = item.rooms.FirstOrDefault(x => x.number == room.Number && x.status == 3);
+                                                                                                <td>
+
+                            @if (pastRes is not null)
+                            {
+                                                                                                                                            <a target="_blank" href="/Folio/Index?folioId=@pastRes.folioId" class="past @(pastRes.hafDay?"hafDay":"")">@pastRes.folioId</a>
+                            }
+                            else if (res is not null)
+                            {
+                                                                                                                                            <a target="_blank" href="/Folio/Index?folioId=@res.folioId" class="fill @(res.hafDay?"hafDay":"") showText">@res.folioId</a>
+                            }
+                            else if (preRes is not null)
+                            {
+                                                                                                                                            <a target="_blank" href="/Folio/Index?folioId=@preRes.folioId" class="reserve @(preRes.hafDay?"hafDay":"") showText">@preRes.folioId</a>
+                            }
+                            else
+                            {
+                                                                                                                                            <a target="_blank" asp-controller="Reserve" asp-action="AddorEdit" asp-route-dateValue="@item.Date"
+                                                                                                                                               asp-route-roomNumber="@room.Number"></a>
+                            }
+                                                                                                </td>
+
+                    }
+
+                                                    </tr>
+            }
+
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<button class="btnRefresh">به روز رسانی</button>
+
+
+<script src="~/js/datepicker_reserveTable.js"></script>

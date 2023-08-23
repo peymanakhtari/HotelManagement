@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DeletedReserve>
+@{
+    ViewData["Title"] = "رزرو های حذف شده";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<h3 class="text-center text-white">رزرو های حذف شده  </h3>
+<br />
+
+<link rel="stylesheet" href="~/css/reportTables.css">
+<div id="tableContainer">
+    <table id="tableReportReserve" class="tableData">
+        <tr>
+            <th>زمان حذف </th>
+            <th>حذف کننده</th>
+            <th>کد فولیو</th>
+            <th>نام و نام خانوادگی</th>
+            <th>موبایل</th>
+            <th>تاریخ رزرو</th>
+            <th>اتاق</th>
+            <th>وبسایت</th>
+            <th>مبلغ</th>
+            <th>نیمروز</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(item.datetime.ToShamsi().ToStringPersianDateTime() + " --- " + item.datetime.Hour+":"+item.datetime.Minute)</td>
+                <td>@item.User.Name</td>
+                <td>@item.folioId</td>
+                <td>@(item.folioName)</td>
+                <td>@item.Mobile</td>
+                <td>@item.ReserveDate.ToShamsi().ToStringPersianDateTime()</td>
+                <td>@item.RoomNumber</td>
+                <td>@((item.websiteId != 0) ? ((List<Website>)ViewBag.websites).First(x => x.Id == item.websiteId).Name : "")</td>
+                <td>@item.Price</td>
+                <td>@((item.HafDay) ? "نیمروز" : "")</td>
+            </tr>
+        }
+
+
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>

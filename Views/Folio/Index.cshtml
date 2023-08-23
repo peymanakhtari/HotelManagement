@@ -1,0 +1,148 @@
+﻿@using hotelsimorgh.Data.DbModels
+@model IEnumerable<Folio>
+@{
+    @if (ViewBag.foliotitle == null)
+    {
+
+        ViewData["Title"] = "لیست فولیوها";
+    }
+    else
+    {
+        ViewData["Title"] = ViewBag.foliotitle;
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<br>
+<br>
+<h3 class="text-center text-white"> لیست فولیوها  </h3>
+<br>
+<input type="text" class="d-none" id="returnurl" value="@ViewBag.returnUrl">
+<input type="text" class="d-none" id="reserveDate" value="@ViewBag.Date">
+<div id="filterBox">
+    <form action="/Folio/Index">
+        <button class="btn btn-secondary btnSearch">جستجو</button>
+        <div style="width: 15rem;" class="mb-4 d-inline-block" id="datepicker_range_folio">
+            <date-picker label="تاریخ اقامت:" shortcut @@Select="select"></date-picker>
+        </div>
+        <div class="me-5" style="width: 6rem;display: inline-block;">
+            <input dir="ltr" name="folioId" value="@ViewBag.folioId" type="number" placeholder="کد" class="form-control">
+        </div>
+        <div class="me-1" style="width: 9rem;display: inline-block;">
+            <input dir="ltr" name="mobile" value="@ViewBag.mobile" type="number" placeholder="موبایل" class="form-control">
+        </div>
+        <div class="me-1" style="width: 10rem;display: inline-block;">
+            <input name="Family" value="@ViewBag.Family" type="text" placeholder=" نام یا نام خانوادگی" class="form-control">
+        </div>
+        <div class="me-1" style="width: 9rem;display: inline-block;">
+            <input type="text" id="filterFolio" placeholder="سرچ" class="form-control">
+        </div>ّ
+        <div class="me-2" style="display: inline-block; width: 8rem;">
+            <label for="folioBedehkar">مسافر بدهکار</label>
+            <input @(ViewBag.folioBedehkar ? "checked='checked'" : "") name="folioBedehkar" type="checkbox" id="folioBedehkar" class="form-check-input">
+        </div>
+        <div class="me-2" style="display: inline-block; width: 8rem;">
+            <label for="noReserve"> رزرو ثبت نشده</label>
+            <input @(ViewBag.noReserve ? "checked='checked'" : "") name="noReserve" type="checkbox" id="noReserve" class="form-check-input">
+        </div>
+        <div class="me-2" style="display: inline-block; width: 8rem;">
+            <label for="preReserve">رزرو</label>
+            <input @(ViewBag.preReserve ? "checked='checked'" : "") name="preReserve" type="checkbox" id="preReserve" class="form-check-input">
+        </div>
+    </form>
+
+</div>
+<div id="folioTableContainer" class="primaryTable ">
+    <table id="tableFolio" class="table table-dark table-hover tableData">
+        <thead>
+            <tr>
+                <th>کد</th>
+                <th>نام و نام خانوادگی</th>
+                <th> تعداد <br> نفرات</th>
+                <th>موبایل</th>
+                <th>تاریخ ورود</th>
+                <th>تاریخ خروج</th>
+                <th>  وبسایت</th>
+                <th>تعداد‌کل <br>رزرو‌ها</th>
+                <th> پذیرش کننده</th>
+                <th> رزرو ها</th>
+                <th>حذف رزرو ها</th>
+                <th>ویرایش</th>
+                <th>تغییر اتاق</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                ReserveHelper rhelper = new ReserveHelper();
+                int passengerCount = item.passengers.Count() + 1;
+                string bedehkar = (item.Bedehkar) ? "folioRed" : "";
+                bool allReservesWithSameWebsite = false;
+                @if (item.Reserves.Count() > 0)
+                {
+                    int? websiteid = item.Reserves.First().WebsiteId;
+                    if (websiteid != 0)
+                    {
+                        allReservesWithSameWebsite = true;
+                        foreach (var res in item.Reserves.Where(x=>!x.HafDay))
+                        {
+                            if (res.WebsiteId != websiteid||res.WebsiteId==0)
+                            {
+                                allReservesWithSameWebsite = false;
+                            }
+                        }
+                    }
+                
+                }
+                string website = allReservesWithSameWebsite ? ((List<Website>)ViewBag.websites).First(x => x.Id == item.Reserves.First().WebsiteId).Name : "";
+               
+                <tr>
+                    <td class="@bedehkar">@item.Id</td>
+                    <td>@item.Name  @item.Family</td>
+                    <td>@passengerCount</td>
+                    <td>@item.Mobile</td>
+                    <td>@((item.Reserves.Count() == 0) ? "" : item.Reserves.OrderBy(x => x.Date).First().Date.ToShamsi().ToStringPersianDateTime2())</td>
+                    <td>@((item.Reserves.Count(x=>!x.HafDay) == 0) ? "" : item.Reserves.OrderBy(x => x.Date).Last(x => !x.HafDay).Date.AddDays(1).ToShamsi().ToStringPersianDateTime2())</td>
+                    <td>@website</td>
+                    <td>@item.Reserves.Count()</td>
+                    <td>@((item.receptionistId == null) ? "" : (((List<User>)ViewBag.receptionists).First(x => x.Id == item.receptionistId).Name))</td>
+                    <td> <a href="/Home/Index?folioId=@item.Id" class="btn @(item.PreReserve?"folioReserve":"btn-primary")" target="_blank">رزرو‌ها</a></td>
+                    <td> <button id="@item.Id" class="btn btn-danger btnDeleteReserves ">حذف ‌</button></td>
+                    <td> <a href="/Folio/AddOrEdit/@item.Id" class="btn btn-secondary">ویرایش</a></td>
+                    @if (item.Reserves.Count == 0)
+                    {
+                        <td></td>
+                    }
+                    else
+                    {
+                        <td><button class="btnChangeRoom btn btn-warning w-100"> @(Html.Raw((item.Reserves.Count() == 0) ? "" : rhelper.ChangeFolioBedNumberLinks(item.Reserves, (List<Room>)ViewBag.rooms)))</button></td>
+                    }
+                    <td style="color: red;"><button id="folio-@item.Id" class="bg-dark text-danger btnDeleteFolio"><i class="bi bi-trash"></i></button></td>
+                </tr>
+
+            }
+
+
+        </tbody>
+
+    </table>
+
+    <button type="button" onclick="ExportToExcel()" class="btn btn-success me-4">دریافت فایل اکسل</button>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script src="~/js/datepicker_folio.js"></script>

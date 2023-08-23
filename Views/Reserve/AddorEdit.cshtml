@@ -1,0 +1,135 @@
+﻿@using System.Globalization;
+@model Reserve
+@{
+    ViewData["Title"] = "ثبت رزرو";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="/css/addorEditReserve.css">
+<br>
+<br>
+<h3 class="text-center text-white">ثبت رزرو  </h3>
+<input class="d-none" value="@ViewBag.roomNumber" id="roomIdValue" type="text">
+<form id="frmReserve" action="/Reserve/addoredit" method="post">
+    <input type="number" class="d-none" name="Id" value="@(Model?.Id ?? 0)">
+    <input type="text" class="d-none" id="returnUrl" value="@ViewBag.returnUrl">
+    <input class="d-none" name="reserveDate" value="@ViewBag.date" id="reserveDate" type="text">
+
+    <div class="InputMinDiv">
+        <div class="inputGroup">
+            <div class="inputDiv">
+                <div id="datepicker">
+                    <date-picker label="تاریخ" mode="single" @@Select="select"></date-picker>
+                </div>
+            </div>
+
+            <div class="inputDiv">
+                <label class="m-1" for="">اتاق</label>
+                <select name="RoomId" id="RoomId" class="form-select form-select "
+                        aria-label=".form-select-lg example">
+                    <option value="0" >انتخاب کنید</option>
+                    @foreach (var item in (List<Room>)ViewBag.rooms)
+                    {
+                        @if (Model != null)
+                        {
+                            <option selected="@(Model.RoomId == item.Id ? true :false)" value="@item.Id">
+                                @item.Number
+                            </option>
+                        }
+                        else if (ViewBag.roomNumber != 0)
+                        {
+                            <option value="@item.Id" selected="@(ViewBag.roomNumber ==item.Number ?true : false)">@item.Number</option>
+                        }
+                        else
+                        {
+                            <option value="@item.Id" selected="false">@item.Number</option>
+                        }
+                    }
+                </select>
+            </div>
+            @if (Model == null)
+            {
+                <div class="inputDiv">
+                    <label for="" class="form-lable d-block m-1">تعداد روز </label>
+                    <input type="number" name="numberOfDays" value="1" class="form-control d-inline-block" min="1">
+
+
+                </div>
+            }
+
+        </div>
+        <div class="inputGroup">
+            <div class="inputDiv">
+                <label for="">فولیو</label>
+
+                <select id="selectFolio" class="form-select form-select" aria-label=".form-select-lg example">
+                    <option value="0" selected>انتخاب کنید</option>
+                    @foreach (var item in (List<Folio>)ViewBag.folios)
+                    {
+                        <option value="@item.Id">@(item.Name + " " + item.Family)</option>
+                    }
+                </select>
+            </div>
+
+            <div class="inputDiv">
+                <label for="PassengerName" class="form-lable  m-1">نام مسافر </label>
+                <input type="text" id="PassengerName"
+                       value="@(Model?.Folio?.Name +" "+ Model?.Folio?.Family ?? string.Empty)"
+                       class="form-control  ">
+            </div>
+            <div class="inputDiv folioId">
+                <div>
+                    <label for="folioCode" class="form-lable"> کد: </label>
+                    <input name="FolioId" value="@(Model?.Folio?.Id ?? null)" id="folioCode"
+                           type="number" class="form-control">
+                </div>
+                <button type="button" id="btnSearchFolioByCode" class="btn btn-primary"> جستجو </button>
+            </div>
+        </div>
+        <div class="inputGroup">
+            <div class="inputDiv">
+                <div>
+                    <label for="" class="form-lable"> وبسایت </label>
+                    <select name="WebsiteId" class="form-select form-select" aria-label=".form-select-lg example">
+                        <option value="0" selected="@(Model == null? true :false)">انتخاب کنید</option>
+                        @foreach (var item in (List<Website>)ViewBag.websites)
+                        {
+                            <option selected="@(Model != null && Model.WebsiteId == item.Id ? true :false)" value="@(item.Id)">
+                                @(item.Name)
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="inputDiv">
+                <label for="" class="form-lable d-block m-1"> قیمت </label>
+                <input id="reservePrice" dir="ltr" name="reservePrice" value="@(Model?.Price ?? null)" type="text"
+                       class="form-control d-inline-block">
+            </div>
+
+            <div class="inputDiv">
+                <button id="btnSubmitReserve" type="button" class="btn btn-success px-5"> ثبت</button>
+            </div>
+        </div>
+
+        <div class="text-center frmReserveValidation"
+             style="position: relative;top: 1.5rem;right: 1rem;">
+            <span id="dateVld">تاریخ را انتخاب کنید.</span>
+            <span id="roomVld">اتاق را انتخاب کنید.</span>
+            <span id="folioVld">فولیو را انتخاب کنید.</span>
+            <span id="priceVld">قیمت را وارد کنید.</span>
+        </div>
+    </div>
+
+</form>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<script src="~/js/datepicker_AddOrEditReserve.js"></script>

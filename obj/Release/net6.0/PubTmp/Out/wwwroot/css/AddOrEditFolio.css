@@ -1,0 +1,54 @@
+﻿.inputDiv {
+  width: 12rem;
+  display: inline-block;
+  height: 100%;
+  margin: 8px;
+}
+
+.inputGroup {
+  margin-top: 1rem;
+}
+
+.inputDiv.carModel {
+  bottom: 2.4rem;
+  position: relative;
+}
+
+.inputDiv.address {
+  width: 20rem;
+}
+
+label {
+  margin: 6px !important;
+}
+.mainContainerFolio {
+  margin-right: 9rem;
+}
+
+.btnSubmitFolio {
+  width: 10rem;
+}
+
+@media only screen and (max-width: 1400px) {
+  .mainContainerFolio {
+    margin-right: 16px;
+  }
+  .inputDiv.carModel {
+    margin-top: 3rem;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .inputsPekal {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .address {
+    margin-top: 0;
+  }
+  .description {
+    position: relative;
+    bottom: 2rem;
+  }
+}

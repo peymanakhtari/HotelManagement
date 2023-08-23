@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Folio>
+@{
+    ViewData["Title"] = "گزارش مسافران";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/reportTables.css">
+<br />
+<br />
+<br />
+<h3 class="text-center text-white">گزارش گیری مسافران  </h3>
+<br />
+<input type="text" class="d-none" id="reserveDate" value="@ViewBag.Date">
+<div>
+
+    <div id="filterContainer">
+        <form action="/Report/Passengers">
+            <button class="btn btn-secondary btnSearch">جستجو</button>
+            <div style="width: 18rem;" class=" d-inline-block" id="datepicker_range_reportPassenger">
+                <date-picker label=" تاریخ ورود:" shortcut @@Select="select"></date-picker>
+            </div>
+            <div style="width:10rem" class="d-inline-block">
+                <label class="m-1" for="text">کد فولیو:</label>
+                <input value="@ViewBag.folioId" dir="ltr" id="text" name="folioId" type="number" class="form-control">
+            </div>
+            <div style="width:13rem" class="d-inline-block">
+                <label class="m-1" for="text">نام یا نام خانوادگی:</label>
+                <input value="@ViewBag.text" id="text" name="text" type="text" class="form-control">
+            </div>
+            <div style="width:10rem" class="d-inline-block">
+                <label class="m-1" for="nationalCode">کد ملی:</label>
+                <input value="@ViewBag.nationalCode" dir="ltr" id="nationalCode" name="nationalCode" type="text" class="form-control">
+            </div>
+            <div style="width:10rem" class="d-inline-block">
+                <label class="m-1" style="visibility:hidden" for="nationalCode">کد ملی:</label>
+                <input placeholder="سرچ" id="filterTable" type="text" class="form-control">
+            </div>
+            <div style="width:13rem" class="d-inline-block">
+                <label class="m-1" style="visibility:hidden" for="nationalCode">کد ملی:</label>
+                <button type="button" onclick="ExportToExcel()" class="btn btn-success me-1">دریافت فایل اکسل</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="tableContainer">
+        <table id="tableReportReserve" class="tableData">
+            <tr>
+                <th>کد</th>
+                <th>مسافر همراه</th>
+                <th>نام و  خانوادگی</th>
+                <th>نام پدر</th>
+                <th>کد ملی </th>
+                <th>تاریخ ورود</th>
+                <th>تاریخ خروج</th>
+                <th>تعداد‌کل <br>رزرو‌ها</th>
+                <th>موبایل</th>
+                <th>مدل خوردو</th>
+                <th>پلاک خودرو</th>
+                <th>آدرس</th>
+                <th>توضیحات</th>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.passengers.Count()</td>
+                    <td>@((item.Name ?? "") + " " + (item.Family ?? ""))</td>
+                    <td>@(item.FatherName ?? "")</td>
+                    <td>@(item.NationalCode ?? "")</td>
+                    <td>@((item.Reserves.Count() == 0) ? "" : item.Reserves.OrderBy(x => x.Date).First().Date.ToShamsi().ToStringPersianDateTime())</td>
+                    <td>@((item.Reserves.Count(x => !x.HafDay) == 0) ? "" : item.Reserves.OrderBy(x => x.Date).Last(x => !x.HafDay).Date.AddDays(1).ToShamsi().ToStringPersianDateTime())</td>
+                    <td>@item.Reserves.Where(x=>!x.HafDay).Count()</td>
+                    <td>@(item.Mobile ?? "")</td>
+                    <td>@(item.CarModel ?? "")</td>
+                    <td>@item.Pelak1 ایران  @item.Pelak2@item.Pelak3@item.Pelak4</td>
+                    <td style="font-size:1px">@(item.Address ?? "")</td>
+                    <td style="font-size:1px">@(item.Description ?? "")</td>
+                </tr>
+                foreach (var passenger in item.passengers)
+                {
+                    <tr>
+                        <td>@passenger.FolioId</td>
+                        <td>@((passenger.Folio.Name ?? "") + " " + (passenger.Folio.Family ?? ""))</td>
+                        <td>@((passenger.Name ?? "") + " " + (passenger.Family ?? ""))</td>
+                        <td>@(passenger.FatherName ?? "")</td>
+                        <td>@(passenger.NationalCode ?? "")</td>
+                        <td>@((item.Reserves.Count() == 0) ? "" : item.Reserves.OrderBy(x => x.Date).First().Date.ToShamsi().ToStringPersianDateTime())</td>
+                        <td>@((item.Reserves.Count(x => !x.HafDay) == 0) ? "" : item.Reserves.OrderBy(x => x.Date).Last(x => !x.HafDay).Date.AddDays(1).ToShamsi().ToStringPersianDateTime())</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                }
+
+            }
+
+
+        </table>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<script src="~/js/datepicker_report_passenger.js"></script>

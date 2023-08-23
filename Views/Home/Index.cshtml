@@ -1,0 +1,326 @@
+﻿@model List<hotelsimorgh.Models.ReserveTemplateRow>
+@{
+    @if (ViewBag.foliotitle == null)
+    {
+        if (ViewBag.roomNumber==0)
+        {
+        ViewData["Title"] = "رزرو‌ها";
+        }
+        else
+        {
+            ViewData["Title"] = "اتاق " + ViewBag.roomNumber + " - " + ViewBag.Date;
+        }
+    }
+    else
+    {
+        ViewData["Title"] = ViewBag.foliotitle;
+    }
+    //var template = (List<ReserveTemplate>)ViewBag.template;
+}
+<br>
+<br>
+<h3 class="text-center text-white">لیست رزروها  </h3>
+<br>
+
+<link rel="stylesheet" href="/css//mainPage.css">
+@if (ViewBag.thinLineSeprator)
+{
+    <style>
+        .seprator {
+            border-top: 3px solid var(--rowSeperator) !important;
+        }
+    </style>
+
+}
+
+<input class="d-none" type="text" id="filterParam">
+<input type="text" class="d-none" id="reserveDate" value="@ViewBag.Date">
+<input type="text" class="d-none" id="reserveFiler" value="@ViewBag.filter">
+<input type="text" class="d-none" id="roomNumber" value="@ViewBag.roomNumber">
+<input type="text" class="d-none" id="_websiteId" value="@ViewBag.websiteId">
+<input type="text" class="d-none" id="_bedCount" value="@ViewBag.bedCount">
+<input type="text" class="d-none" id="_submitter" value="@ViewBag.submitter">
+<form action="/Home/Index">
+    <div id="filterBox">
+        <button id="btnFilter" type="submit" class="btn btn-secondary btnSearch">جستجو</button>
+        <div style="width:16rem;display: inline-block;">
+            <div class="mb-4" id="datepicker_range">
+                <date-picker label="فیلتر تاریخ :" shortcut @@Select="select"></date-picker>
+            </div>
+        </div>
+        <div style="display:inline-block;">
+            <div class="" style="">
+                <div class="form-check me-3">
+                    <input type="radio" class="form-check-input" id="radio1" name="filter" value="0">
+                    <label class="form-check-label" for="radio1">همه</label>
+                </div>
+                <div class="form-check me-1">
+                    <input type="radio" class="form-check-input" id="radio2" name="filter" value="1">
+                    <label for="radio2" class="form-check-label">اتاق‌های‌پر</label>
+                </div>
+                <div class="form-check me-1">
+                    <input type="radio" class="form-check-input" id="radio3" name="filter" value="2">
+                    <label class="form-check-label" for="radio3">رزرو</label>
+                </div>
+                <div class="form-check me-1">
+                    <input type="radio" class="form-check-input" id="radio4" name="filter" value="3">
+                    <label class="form-check-label" for="radio4">هر دو</label>
+                </div>
+                <div class="form-check me-1">
+                    <input type="radio" class="form-check-input" id="radio5" name="filter" value="4">
+                    <label for="radio5" class="form-check-label">خالی</label>
+                </div>
+            </div>
+        </div>
+        <div class="me-1" style="display: inline-block;width: 5rem;">
+            <span style="height: 100%;">
+                <label class="m-1" for="">شماره‌اتاق</label>
+                <select name="roomId" id="RoomId" class="form-select form-select mb-3"
+                        aria-label=".form-select-lg example">
+                    <option value="0"> همه</option>
+                    @foreach (var item in (List<Room>)ViewBag.rooms)
+                    {
+                        if (ViewBag.roomNumber != 0)
+                        {
+                            <option value="@item.Id" selected="@(item.Number ==ViewBag.roomNumber ?true : false)">@item.Number</option>
+                        }
+                        else
+                        {
+                            <option value="@item.Id" selected="false">@item.Number</option>
+                        }
+
+                    }
+                </select>
+            </span>
+        </div>
+        <div class="me-1" style="display: inline-block;width:7rem;">
+            <span style="height: 100%;">
+                <label class="m-1" for="">تعداد تخت</label>
+                <select name="bedCount" id="bedCount" class="form-select form-select mb-3"
+                        aria-label=".form-select-lg example">
+                    <option value="0"> همه</option>
+                    @foreach (var item in (List<int>)ViewBag.bedTypes)
+                    {
+                        if (ViewBag.bedCount != 0)
+                        {
+                            <option value="@item" selected="@(item ==ViewBag.bedCount ?true : false)">@item.toPersianNumber()‌تخته</option>
+                        }
+                        else
+                        {
+                            <option value="@item" selected="false">@item.toPersianNumber() تخته</option>
+                        }
+
+                    }
+                </select>
+            </span>
+        </div>
+        <div style="display: inline-block;width: 10rem;">
+            <span style="height: 100%;">
+                <label class="m-1" for="">وبسایت</label>
+                <select name="websiteId" id="websiteId" class="form-select form-select mb-3"
+                        aria-label=".form-select-lg example">
+                    <option value="0" selected="true">همه</option>
+                    <option value="-1" selected="@(ViewBag.websiteId ==-1?true : false)">بدون وبسایت</option>
+                    @foreach (var item in (List<Website>)ViewBag.websites)
+                    {
+                        if (ViewBag.websiteId != 0)
+                        {
+                            <option value="@item.Id" selected="@(item.Id ==ViewBag.websiteId ?true : false)">@item.Name</option>
+                        }
+                        else
+                        {
+                            <option value="@item.Id" selected="false">@item.Name</option>
+                        }
+                    }
+                </select>
+            </span>
+        </div>
+        <div style="display: inline-block;width: 10rem;">
+            <span style="height: 100%;">
+                <label class="m-1" for="">ثبت کننده</label>
+                <select name="submitter" id="submitter" class="form-select form-select mb-3"
+                        aria-label=".form-select-lg example">
+                    <option value="0" selected="true">همه</option>
+                    @foreach (var item in (List<User>)ViewBag.Submitters)
+                    {
+                        if (ViewBag.submitter != 0)
+                        {
+                            <option value="@item.Id" selected="@(item.Id ==ViewBag.submitter ?true : false)">@item.Name</option>
+                        }
+                        else
+                        {
+                            <option value="@item.Id" selected="false">@item.Name</option>
+                        }
+                    }
+                </select>
+            </span>
+        </div>
+        <div class="me-1" style="display: inline-block; width: 8rem;">
+            <label for="folioBedehkar">مسافر بدهکار</label>
+            <input name="folioBedehkar" @(ViewBag.folioBedehkar ? "checked='checked'" : "") type="checkbox" id="folioBedehkar" class="form-check-input">
+        </div>
+        <div class="me-1" style="display: inline-block; width: 4rem;">
+            <label for="hafDay"> نیمروز</label>
+            <input type="checkbox" @(ViewBag.hafDay ? "checked='checked'" : "") name="hafDay" id="hafDay" class="form-check-input">
+        </div>
+        <div style="width: 5rem;display: inline-block;">
+            <input id="FolioId" value="@ViewBag.folioId" name="folioId" type="number" class="form-control" placeholder="فولیو" dir="ltr">
+        </div>
+        <div style="width:10rem;display: inline-block;">
+            <input class="form-control" placeholder="سرچ" id="filterReserve" type="text">
+        </div>
+        @*     <div class="tableGuide">
+        <span>اتاق‌پر</span>
+        <span>رزرو شده</span>
+        </div>*@
+    </div>
+</form>
+<div class="tableContainer primaryTable" id="tableContainer">
+    <table id="tableReserve" class="table table-hover  table-bordered tableData">
+        <thead>
+            <tr>
+                <th rowspan="2" style="width: 1rem;font-size: 14px;" scope="col">اتاق</th>
+                <th rowspan="2" style="width: 4rem;" scope="col">تاریخ</th>
+                <th rowspan="2" style="width:8rem;" scope="col">رزرو اتاق</th>
+                <th rowspan="2" style="width: 1rem;font-size: 13px;" scope="col">ظرفیت <br />(نفر)</th>
+                <th rowspan="2" style="width: 6rem;" scope="col">روز هفته</th>
+                <th rowspan="2" style="width: 9rem;" scope="col">وبسایت</th>
+                <th rowspan="2" style="width: 6rem;" scope="col">مبلغ</th>
+                <th rowspan="2" style="width: 5rem;" scope="col">فولیو</th>
+                <th rowspan="2" style="width: 16rem;" scope="col">نام مسافر</th>
+
+                <th rowspan="2" style="width: 6rem;" scope="col">موبایل</th>
+                <th rowspan="2" style="width: 6rem;" scope="col">ثبت کننده</th>
+                <th colspan="4" style="border-right: 4px solid black ;">رزرو نیمروز(12 ظهر تا @ViewBag.HafDayLeaveHour شب)</th>
+
+            </tr>
+            <tr style="background-color: rgb(182, 182, 182);" class="hafDayHeader">
+                <th style="width: 12rem; border-right: 4px solid black ;" scope="col"> نام مسافر </th>
+                <th style="width: 4.7rem;" scope="col"> فولیو </th>
+                <th style="width: 6rem;" scope="col"> مبلغ </th>
+                <th style="width: 5rem;" scope="col"> رزرو</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @foreach (var item in Model)
+            {
+                string trClass = "emptyTr";
+
+                if (item.reserve != null)
+                {
+                    switch (item.statusRes)
+                    {
+                        case 1:
+                            trClass = "pastTr"; break;
+                        case 2:
+                            trClass = "fullTr"; break;
+                        case 3:
+                            trClass = " reserveTr"; break;
+                    }
+                }
+                string hafDayClass = "";
+                if (item.HafDay != null)
+                {
+                    switch (item.statusHres)
+                    {
+                        case 1:
+                            hafDayClass = "HfPastTd"; break;
+                        case 2:
+                            hafDayClass = "HfFullTd"; break;
+                        case 3:
+                            hafDayClass = " HfReserveTd"; break;
+                    }
+                }
+
+                string folioClass = "";
+                if (item.reserve != null)
+                {
+                    folioClass = (item.reserve.reserve.Folio.Bedehkar) ? "folioRed" : "";
+                }
+                string folioClassHafDay = "";
+                if (item.HafDay != null)
+                {
+                    folioClassHafDay = (item.HafDay.reserve.Folio.Bedehkar) ? "folioRed" : "";
+                }
+                <tr class="@trClass">
+                    <th style="text-align:center;vertical-align:middle" scope="row">@item.room.Number</th>
+                    <td class="@((ViewBag.seprateRows)?"Date":"")">@item.date.ToShamsi().ToStringPersianDateTime2()</td>
+                    @if (item.reserve == null)
+                    {
+                        <td class="reserveBtn">
+                            <a target="_blank" style="background-color: green; " href="/reserve/addoredit?dateValue=@item.date&roomNumber=@item.room.Number&returnUrl=@ViewBag.returnUrl">رزرو </a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td id="Res-@item.reserve.reserve.Id" style="vertical-align:middle;text-align:center" class="btnDelete ">
+                            <button id="Del-@item.reserve.reserve.Id" class="deleteReserve" href=""> <i class="bi bi-trash"></i></button>
+                        </td>
+                    }
+                    <td scope="row">@item.room.Capacity.toPersianNumber()</td>
+                    <td>@item.date.ToShamsi().PersianDayOfWeek()</td>
+                    <td>@(item.reserve?.website ?? "")</td>
+                    <td class="priceFormat">@(item.reserve?.reserve?.Price ?? null)</td>
+                    @if (item.reserve != null)
+                    {
+                        <td class="  reserveBtn foliobtn p-0">
+                            <a class="@folioClass" target="_blank" href="/folio/Index?folioId=@item.reserve.reserve.FolioId"> @item.reserve.reserve.FolioId</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    <td><a class="NameFamilyLink" href="/Home/Index?folioId=@(item.reserve?.reserve?.FolioId)" target="_blank">@((item.reserve?.reserve?.Folio.Name ?? null) + " " + (item.reserve?.reserve?.Folio.Family ?? null))</a></td>
+                    <td>@(item.reserve?.reserve?.Folio.Mobile ?? null)</td>
+                    <td>@(item.reserve?.reserve?.User.Name ?? null)</td>
+                    @if (item.HafDay == null)
+                    {
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        if (item.reserve != null)
+                        {
+                            <td></td>
+                        }
+                        else
+                        {
+                            <td class="reserveBtn">
+                                <a target="_blank" style=" background-color: green;" href="/reserve/hafreserve?date=@item.date&roomNumber=@item.room.Number&returnUrl=@ViewBag.returnUrl">رزرو </a>
+                            </td>
+                        }
+                    }
+                    else
+                    {
+                        <td id="Res-@item.HafDay.reserve.Id" class="@hafDayClass "><a class="NameFamilyLink" href="/Home/Index?folioId=@(item.HafDay?.reserve?.FolioId)" target="_blank">@((item.HafDay?.reserve?.Folio.Name ?? null) + " " + (item.HafDay?.reserve?.Folio.Family ?? null))</a></td>
+                        <td class="@hafDayClass  reserveBtn foliobtn">
+                            <a target="_blank" href="/folio/Index?folioId=@item.HafDay.reserve.FolioId" class="@folioClassHafDay"> @item.HafDay.reserve.FolioId</a>
+                        </td>
+                        <td class="@hafDayClass  priceFormat">@item.HafDay.reserve.Price</td>
+                        <td class="@hafDayClass  reserveBtn" style="padding: 0;">
+                            <button id="Del-@item.HafDay.reserve.Id" class="deleteReserve"><i class="bi bi-trash"></i> </button>
+
+                        </td>
+                    }
+
+
+                </tr>
+
+            }
+
+
+        </tbody>
+    </table>
+    <button class="btnRefresh">به روز رسانی</button>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <script src="~/js/datePickerMainPage.js"></script>
+
+
+</div>
+
+
+

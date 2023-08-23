@@ -1,0 +1,101 @@
+﻿@using System.Globalization;
+
+@{
+    ViewData["Title"] = "ثبت رزرو نیمروز";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var yesterdayFolio = (Folio)ViewBag.yesterdayFolio;
+}
+<link rel="stylesheet" href="/css/addorEditReserve.css" />
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<br>
+<br>
+<form class="InputMinDiv" id="frmReserveHafDay" action="/Reserve/HafReserve" method="post">
+    <input type="text" class="d-none" name="returnUrl" id="returnUrl" value="@ViewBag.returnUrl">
+    <input type="number" class="d-none" name="Id" value="@(Model?.Id ?? 0)">
+    <div style="font-size:18px" class="hafReserveInfo inputGroup">
+        <div class="inputDiv">
+            <span>اتاق </span>
+
+            <input class="inputHafReserveInfo" style="max-width:2rem" type="number" name="RoomNumber" value="@ViewBag.room" />
+        </div>
+        <div class="inputDiv">
+            <span>
+                @(((DateTime)ViewBag.date).ToShamsi().PersianDayOfWeek())
+            </span>
+            <input class="inputHafReserveInfo" type="text" name="DateString" value=" @(((DateTime)ViewBag.date).ToShamsi().ToStringPersianDateTime())" />
+
+        </div>
+        <div class="inputDiv">
+            <span>
+                12 ظهر تا 8 شب
+            </span>
+        </div>
+
+    </div>
+    <div class="inputGroup">
+        <div class="inputDiv">
+            <label for="">فولیو</label>
+
+            <select id="selectFolio" class="form-select form-select" aria-label=" ">
+                <option value="0" selected>انتخاب کنید</option>
+                @foreach (var item in (List<Folio>)ViewBag.folios)
+                {
+                    <option value="@item.Id">@(item.Name + " " + item.Family)</option>
+                }
+            </select>
+        </div>
+
+        <div class="inputDiv">
+            <label for="PassengerName">نام مسافر </label>
+            <input style="width:12rem !important" type="text" id="PassengerName"
+                   value="@((yesterdayFolio!=null)?yesterdayFolio.Name+" "+yesterdayFolio.Family:string.Empty)"
+                   class="form-control">
+        </div>
+        <div style="width:12rem" class="inputDiv">
+            <label for="folioCode" class="d-block "> کد: </label>
+            <input name="FolioId" value="@((yesterdayFolio!=null)?yesterdayFolio.Id:string.Empty)" id="folioCode"
+                   type="number" class="form-control d-inline-block">
+            <button type="button" id="btnSearchFolioByCode" class="btn btn-primary btnSearch">
+                جستجو
+            </button>
+        </div>
+    </div>
+    <div class="inputGroup">
+        <div class="inputDiv">
+            <label for="" class=" "> قیمت </label>
+            <input id="reservePrice" dir="ltr" name="reservePrice" value="@(Model?.Price ?? null)" type="text"
+                   class="form-control">
+        </div>
+        <div class="inputDiv">
+            <label style="visibility:hidden;display:block">df</label>
+            <button type="button" id="btnSubmitHafReserve" class="btn btn-success px-5"> ثبت</button>
+        </div>
+    </div>
+    <div class="text-center mt-3 frmReserveValidationHafDay">
+        <span id="folioVld">فولیو را انتخاب کنید.</span>
+        <span id="priceVld">قیمت را وارد کنید.</span>
+    </div>
+</form>
+<br />
+<br />
+<br />
+<br />
+<br />
+<script>
+    $(document).on('keydown', function (event) {
+        if (event.which === 13) {
+            $('.btnSearch').click();
+        }
+    });
+</script>

@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html dir="rtl">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="~/css/font.css" />
+    <link rel="stylesheet" href="">
+    <title>ورود به پنل</title>
+</head>
+<body>
+    <div class="container1 desk1 mt-5 mx-auto">
+        <h2 class="text-center">پنل مدیریتیِ هتلداری</h2>
+        <p class="mt-5">
+            برای ورود نام کاربری را"demo"
+            وکلمه عبور را"1234" وارد نمائید
+        </p>
+    </div>
+    <div class="loginBoxContainer">
+        <form action="/User/Login" method="post" id="frmLogin" class="mt-2 loginBox">
+            @Html.AntiForgeryToken()
+          <div style="display: flex; justify-content: space-between;">
+              <a href="/Reserve/ReservesTable">وضعیت اتاق‌ها</a>
+              <a class="bg-light text-dark" href="">GitHub</a>
+          </div>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example1"> نام کاربری</label>
+                <input dir="ltr" name="username" id="form2Example1" class="" />
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example2">کلمه عبور</label>
+                <input dir="ltr" name="password" type="password" id="form2Example2" class="" />
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" id="btnsubmit" class="btn btn-success btn-block mb-4 px-4"> ورود</button>
+            @if (ViewBag.userNotFound is not null)
+            {
+                <div id="validation" class="text-danger fw-bold">
+                    نام کاربری یا کلمه عبور اشتباه است
+                </div>
+                <br>
+            }
+            <div style="direction: ltr;" class="text-light">
+                UserName=demo <br>
+                Password=1234
+            </div>
+        </form>
+    </div>
+  
+    <div class="container mt-5">
+        <p class="mt-4" style="text-align: justify;line-height: 28px;">
+            این اپلیکیشن جهت ثبت سیستمی رزرو‌ها طراحی شده است. تمامی اطلاعات ثبت شده از مسافران از جمله نام، نام خانوادگی، کد ملی و... غیر واقعی بوده و صرفا جهت آشنایی با فیچر‌های این اپلیکیشن می‌باشد.
+            <br><br>
+
+             شما نیز می‌توانید با انتخاب گزینه <span style="border-radius: 3px;" class="bg-dark text-light px-2 py-1 mx-2">ثبت فولیو</span>  از منو، مسافران جدیدی را ثبت کرده، و رزرو هایی را به آنها اختصاص دهید.
+            <br><br>
+            جهت آشنایی بیشتر با نحوه کارکرد این اپلیکیشن پس از ورود، از منو گزینه <span style="border-radius: 3px;" class="bg-dark text-light px-2 py-1 mx-2">درباره این اپلیکیشن</span> را انتخاب نمائید.
+           
+        </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <script src="~/lib/bootstrap-bundle.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>

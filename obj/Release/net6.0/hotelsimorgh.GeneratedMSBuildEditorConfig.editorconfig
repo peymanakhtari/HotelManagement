@@ -1,0 +1,93 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = hotelsimorgh
+build_property.RootNamespace = hotelsimorgh
+build_property.ProjectDir = E:\peyman\hotel artemis\aspnetcore\hotel.peymanakhtari.com\hotelsimorgh\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = E:\peyman\hotel artemis\aspnetcore\hotel.peymanakhtari.com\hotelsimorgh
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Folio/AddOrEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9saW9cQWRkT3JFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Folio/ChangeRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9saW9cQ2hhbmdlUm9vbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Folio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9saW9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Home/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Report/DeletedReserves.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XERlbGV0ZWRSZXNlcnZlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Report/Passengers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFBhc3NlbmdlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Report/Reserve.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFJlc2VydmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Reserve/AddorEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2ZVxBZGRvckVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Reserve/HafReserve.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2ZVxIYWZSZXNlcnZlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Reserve/ReservesTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2ZVxSZXNlcnZlc1RhYmxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/peyman/hotel artemis/aspnetcore/hotel.peymanakhtari.com/hotelsimorgh/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-bup9k7nwta

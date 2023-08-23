@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "test";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+</head>
+<body>
+    <br />
+    <br />
+    <a href="/Home/TestReserves">test reserves</a>
+
+    @if (ViewBag.reserve!=null)
+    {
+        <h3>
+            result reserves
+        </h3>
+        <div>
+            @foreach (var item in (List<Reserve>)ViewBag.reserve)
+            {
+                <span>id:@item.Id</span>
+                <br />  <span>folioId:@item.FolioId</span>
+                <br /> <span>@item.Date</span>
+                <br />   <span>roomId:@item.RoomId</span>
+                <br />
+                <br />
+            }
+        </div>
+    }
+ <br />
+
+    @if (ViewBag.HafDay != null)
+    {
+            <h3>result reserve haf day</h3>
+    <div>
+        @foreach (var item in (List<Reserve>)ViewBag.HafDay)
+        {
+            <span>id:@item.Id</span>
+            <br />   <span>folioId:@item.FolioId</span>
+            <br />   <span>@item.Date</span>
+            <br />   <span>roomId:@item.RoomId</span>
+            <br />
+
+            <br />
+        }
+    </div>
+    }
+
+    <a href="/Home/testIfHafdayhasSameFolioOfPreviousDay">test folio haf day</a>
+    @if (ViewBag.folios != null)
+    {
+        <h3>test If Hafday has Same Folio Of Previous Day</h3>
+        @foreach (var item in (List<int>)ViewBag.folios)
+        {
+            <span>@item</span>
+            <br />
+        }
+    }
+    <br />
+    <a href="/Home/checkGapInFolioReserves">test folio gap day</a>
+    @if (ViewBag.foliosWithIssue!=null)
+    {
+        <h3>check Gap In Folio Reserves</h3>
+        @foreach (var item in (List<Folio>)ViewBag.foliosWithIssue)
+        {
+            <span>@item.Id</span><br />
+            <span>@item.Family</span>
+            <br />
+            <br />
+        }
+    }
+
+
+</body>
+</html>

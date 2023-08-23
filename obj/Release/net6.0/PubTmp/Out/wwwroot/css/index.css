@@ -1,0 +1,305 @@
+:root {
+    --mainMargin: calc(100% - 30rem);
+    --white: #ffffff;
+    --colorDarkMode: rgb(49, 49, 49);
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn-warning {
+    background-color: rgb(250, 250, 179);
+    border: none;
+}
+
+    .btn-warning:hover,
+    .btn-warning:focus {
+        background-color: rgb(250, 250, 179) !important;
+    }
+
+.btn-primary {
+    border: none;
+    background-color: rgb(114, 114, 255);
+}
+
+.btn-danger {
+    background-color: rgb(184, 63, 164);
+    max-height: 2.4rem;
+}
+
+.folioReserve {
+    background-color: #ff2b3d;
+    color:white
+}
+
+    .folioReserve:hover {
+        background-color: #ff6370
+    }
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.btnRefresh {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background-color: rgb(255, 255, 120);
+    padding: 0.6rem 1.6rem;
+    border-radius: 10px;
+    border: 1px solid rgb(110, 110, 110);
+    font-size: 14px;
+    z-index: 199;
+}
+
+    .btnRefresh:hover {
+        opacity: 0.8;
+    }
+
+@media only screen and (max-width: 1600px) {
+    :root {
+        --mainMargin: calc(100% - 15rem);
+        --white: #ffffff;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    /* .tableFixHead {
+    width: 80%;
+  } */
+}
+
+@media only screen and (max-width: 1200px) {
+    :root {
+        --mainMargin: calc(100% - 4rem);
+        --white: #ffffff;
+    }
+
+    /* .tableFixHead {
+    width: 87%;
+  } */
+}
+
+.primaryTable {
+    margin: auto;
+    width: var(--mainMargin);
+}
+
+.primaryFilterBox {
+    margin: auto;
+    width: var(--mainMargin);
+}
+
+#filterBox {
+    margin: auto;
+    width: var(--mainMargin);
+    padding: 0 16px 0 16px;
+}
+
+.emptyRoomAlert {
+    margin: auto;
+    width: var(--mainMargin);
+    padding: 1rem 4rem;
+    margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 1024px) {
+    .primaryTable {
+        width: 100%;
+    }
+
+    .primaryFilterBox {
+        width: 100%;
+    }
+
+    #filterBox {
+        width: 100%;
+    }
+    /* #tableContainer {
+    margin-right: 0 !important;
+    width: 100% !important;
+  } */
+    #myTable {
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+    /* .tableFixHead {
+    width: 100%;
+  } */
+    :root {
+        --mainMargin: calc(100% - 8px);
+        --white: #ffffff;
+    }
+
+    .btnRefresh {
+        bottom: 0.7rem;
+        left: 0.7rem;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body {
+    font-family: iranyekan;
+    background-color: var(--colorDarkMode);
+}
+
+label {
+    color: white;
+}
+
+.empty {
+    background-color: white;
+}
+
+#myTable {
+    margin: auto;
+    width: var(--mainMargin);
+}
+
+.reserveBtn a:hover {
+    opacity: 0.6;
+}
+
+.reserveBtn a {
+    border-radius: 4px;
+    padding: 5px 10px 5px 10px;
+    width: calc(100% - 8px);
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 3rem;
+}
+
+.reserveBtn button {
+    border-radius: 4px;
+    padding: 5px 10px 5px 10px;
+    width: calc(100% - 8px);
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.reserveBtn {
+    padding: 2px !important;
+}
+
+.foliobtn a {
+    background-color: rgb(122, 122, 122);
+}
+
+.nav-link {
+    margin: 0.5rem;
+}
+
+    .nav-link.btn {
+        display: inline-block;
+        padding: 8px 1rem !important;
+    }
+
+.table-danger1 {
+    color: white;
+}
+
+    .table-danger1:hover td {
+        color: white !important;
+    }
+
+#tableReserve td:nth-child(12) {
+    border-right: 4px solid black !important;
+}
+
+.deletePassenger i {
+    font-size: 1.6rem;
+    color: red;
+    cursor: pointer;
+}
+
+.btnDelete {
+    text-align: right;
+    vertical-align: bottom;
+}
+
+    .btnDelete button {
+        color: rgb(255, 0, 0);
+        padding: 2px;
+        border-radius: 3px;
+        background-color: transparent;
+    }
+
+        .btnDelete button:hover {
+            opacity: 0.6;
+        }
+
+.frmReserveValidation span {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.reserveBtn button:hover {
+    opacity: 0.6;
+}
+
+thead th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+tbody td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.folioRed {
+    background-color: rgb(196, 0, 0) !important;
+}
+
+.btnLogout:hover {
+    background-color: rgb(221, 54, 54) !important;
+}
+
+.frmReserveValidationHafDay {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.form-check {
+    display: inline-block;
+}
+
+.NameFamilyLink,
+.NameFamilyLink:hover {
+    text-decoration: none;
+    color: white;
+}
+
+    .NameFamilyLink:hover {
+        color: rgb(197, 197, 197);
+    }
+
+.tableData {
+    margin-top: 1rem;
+}
+
+.btnChangeRoom {
+    width: 4rem !important;
+}
+
+    .btnChangeRoom a {
+        text-decoration: none;
+    }
+
+        .btnChangeRoom a:hover {
+            opacity: 0.7;
+        }

@@ -1,0 +1,159 @@
+:root {
+  --colorPast: rgb(24, 24, 24);
+  --colorPastHover: rgb(44, 44, 44);
+  --colorReserve: rgb(151, 50, 50);
+  --colorReserveHover: rgb(139, 38, 38);
+  --colorWhite: rgb(247, 247, 247);
+  --colorFull: rgb(13, 97, 13);
+  --colorFullHover: rgb(34, 88, 34);
+  --borderColor1: rgb(170, 170, 170);
+  --rowSeperator: rgb(0, 174, 255);
+}
+tr {
+  border-color: var(--borderColor1);
+}
+
+tr:not(.emptyTr):hover td {
+  color: var(--colorWhite) !important;
+}
+tbody tr,
+th {
+  color: var(--colorWhite);
+}
+tbody tr:hover th {
+  color: var(--colorWhite) !important;
+}
+thead th {
+  background-color: rgb(160, 160, 160) !important;
+  color: black;
+}
+
+.emptyTr {
+  background-color: var(--colorWhite);
+  color: black;
+}
+.emptyTr th,
+.emptyTr:hover th {
+  color: black !important;
+}
+
+.emptyTr .HfPastTd,
+.HfFullTd,
+.HfReserveTd {
+  color: var(--colorWhite);
+}
+
+.emptyTr:hover .HfPastTd,
+.emptyTr:hover .HfFullTd,
+.emptyTr:hover .HfReserveTd {
+  color: var(--colorWhite);
+}
+.pastTr {
+  background-color: var(--colorPast);
+}
+.fullTr {
+  background-color: var(--colorFull);
+}
+.reserveTr {
+  background-color: var(--colorReserve);
+}
+.HfPastTd {
+  background-color: var(--colorPast) !important;
+}
+.HfFullTd {
+  background-color: var(--colorFull) !important;
+}
+.HfReserveTd {
+  background-color: var(--colorReserve) !important;
+}
+.fullTr:hover,
+.pastTr:hover,
+.reserveTr:hover {
+  opacity: 0.75;
+}
+
+.deleteReserve {
+  background-color: transparent;
+  color: red !important;
+}
+
+/* .bg-danger,
+.bg-success {
+  border-color: var(--borderColor1);
+}
+.bg-danger th,
+.bg-danger td {
+  background-color: var(--colorReserve) !important;
+}
+
+.bg-danger:hover td {
+  color: white !important;
+  background-color: var(--colorReserveHover) !important;
+}
+td.bg-danger {
+  background-color: var(--colorReserve) !important;
+}
+.empty:hover .bg-danger {
+  background-color: var(--colorReserveHover) !important;
+}
+
+.bg-success th,
+.bg-success td {
+  background-color: var(--colorFull) !important;
+}
+
+.bg-success:hover td :not(.hafDayTd) {
+  color: white !important;
+  background-color: var(--colorFullHover) !important;
+}
+td.bg-success {
+  background-color: var(--colorFull) !important;
+}
+.empty:hover .bg-success {
+  background-color: var(--colorFullHover) !important;
+}
+
+.hafDayTd.bg-dark {
+  background-color: var(--colorPast) !important;
+}
+tbody .table-dark td,
+th {
+  background-color: var(--colorPast) !important;
+  color: var(--colorWhite);
+}
+
+.bg-dark {
+  background-color: var(--colorPast) !important;
+  border-color: var(--borderColor1);
+}
+
+.empty:hover .bg-dark {
+  background-color: var(--colorPastHover) !important;
+}
+
+tbody .empty th {
+  background-color: white !important;
+  color: var(--colorPastHover);
+}
+
+
+
+*/
+.tableGuide {
+  display: inline-block;
+  color: white;
+  width: 15rem;
+}
+.tableGuide span {
+  padding: 8px 1.3rem;
+  border-radius: 4px;
+}
+.tableGuide span:nth-child(2) {
+  background-color: var(--colorReserve);
+}
+.tableGuide span:nth-child(1) {
+  background-color: var(--colorPast);
+}
+.seprator {
+  border-top: 7px solid var(--rowSeperator) !important;
+}

@@ -1,0 +1,38 @@
+﻿th,
+td {
+  text-align: center;
+  padding: 8px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+tbody tr:nth-child(odd) {
+  background-color: #d6d6d6;
+}
+th {
+  background-color: rgb(46, 46, 46);
+  color: white;
+}
+#tableContainer {
+  width: var(--mainMargin);
+  margin: auto;
+}
+table {
+  width: 100%;
+}
+#filterContainer {
+  margin: auto;
+  padding: 0 8px 0 8px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 1024px) {
+  #tableContainer {
+    width: 100%;
+  }
+}
+#filterContainer {
+  width: var(--mainMargin);
+  margin: auto;
+}

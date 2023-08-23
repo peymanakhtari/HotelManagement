@@ -1,0 +1,17 @@
+p{
+    font-size: 18px;
+    line-height: 2rem;
+    text-align: justify;
+    color: white;
+}
+h3{
+margin: 2rem;
+margin-right:8px;
+}
+
+
+@media only screen and (max-width: 480px){
+    p{
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,601 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\hotelsimorgh.bundle.scp.css",
+      "PackagePath": "staticwebassets\\hotelsimorgh.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\DataProtection\\key-ed8263e2-64d4-4964-a530-1271a0fbb99d.xml",
+      "PackagePath": "staticwebassets\\DataProtection\\key-ed8263e2-64d4-4964-a530-1271a0fbb99d.xml"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\css\\AddOrEditFolio.css",
+      "PackagePath": "staticwebassets\\css\\AddOrEditFolio.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\css\\addorEditReserve.css",
+      "PackagePath": "staticwebassets\\css\\addorEditReserve.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\css\\font.css",
+      "PackagePath": "staticwebassets\\css\\font.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\css\\mainPage.css",
+      "PackagePath": "staticwebassets\\css\\mainPage.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\css\\reportTables.css",
+      "PackagePath": "staticwebassets\\css\\reportTables.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\css\\reserveTable.css",
+      "PackagePath": "staticwebassets\\css\\reserveTable.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\B Homa.ttf",
+      "PackagePath": "staticwebassets\\font\\B Homa.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\B Homa.woff",
+      "PackagePath": "staticwebassets\\font\\B Homa.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\B Homa.woff2",
+      "PackagePath": "staticwebassets\\font\\B Homa.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\B KAMRAN OUTLINE.woff",
+      "PackagePath": "staticwebassets\\font\\B KAMRAN OUTLINE.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\B Roya.ttf",
+      "PackagePath": "staticwebassets\\font\\B Roya.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\B Roya.woff",
+      "PackagePath": "staticwebassets\\font\\B Roya.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\B Roya.woff2",
+      "PackagePath": "staticwebassets\\font\\B Roya.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\BKAMRANOUTLINE.ttf",
+      "PackagePath": "staticwebassets\\font\\BKAMRANOUTLINE.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\BKAMRANOUTLINE.woff2",
+      "PackagePath": "staticwebassets\\font\\BKAMRANOUTLINE.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\BKoodakBold.ttf",
+      "PackagePath": "staticwebassets\\font\\BKoodakBold.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\BKoodakBold.woff",
+      "PackagePath": "staticwebassets\\font\\BKoodakBold.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\BKoodakBold.woff2",
+      "PackagePath": "staticwebassets\\font\\BKoodakBold.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\BMorvarid.ttf",
+      "PackagePath": "staticwebassets\\font\\BMorvarid.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\BMorvarid.woff",
+      "PackagePath": "staticwebassets\\font\\BMorvarid.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\BMorvarid.woff2",
+      "PackagePath": "staticwebassets\\font\\BMorvarid.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\CHANGELOG.md",
+      "PackagePath": "staticwebassets\\font\\CHANGELOG.md"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\IRANSansX-Bold.ttf",
+      "PackagePath": "staticwebassets\\font\\IRANSansX-Bold.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\IRANSansX-Bold.woff",
+      "PackagePath": "staticwebassets\\font\\IRANSansX-Bold.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\IRANSansX-Bold.woff2",
+      "PackagePath": "staticwebassets\\font\\IRANSansX-Bold.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\IRANSansX-Regular.ttf",
+      "PackagePath": "staticwebassets\\font\\IRANSansX-Regular.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\IRANSansX-Regular.woff",
+      "PackagePath": "staticwebassets\\font\\IRANSansX-Regular.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\IRANSansX-Regular.woff2",
+      "PackagePath": "staticwebassets\\font\\IRANSansX-Regular.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Iranian Sans.ttf",
+      "PackagePath": "staticwebassets\\font\\Iranian Sans.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Iranian Sans.woff",
+      "PackagePath": "staticwebassets\\font\\Iranian Sans.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Iranian Sans.woff2",
+      "PackagePath": "staticwebassets\\font\\Iranian Sans.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\LICENSE",
+      "PackagePath": "staticwebassets\\font"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Lalezar-Regular.ttf",
+      "PackagePath": "staticwebassets\\font\\Lalezar-Regular.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Lalezar-Regular.woff",
+      "PackagePath": "staticwebassets\\font\\Lalezar-Regular.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Lalezar-Regular.woff2",
+      "PackagePath": "staticwebassets\\font\\Lalezar-Regular.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\README.md",
+      "PackagePath": "staticwebassets\\font\\README.md"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Shabnam-Bold.ttf",
+      "PackagePath": "staticwebassets\\font\\Shabnam-Bold.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Shabnam-Bold.woff",
+      "PackagePath": "staticwebassets\\font\\Shabnam-Bold.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Shabnam-Bold.woff2",
+      "PackagePath": "staticwebassets\\font\\Shabnam-Bold.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Shabnam.ttf",
+      "PackagePath": "staticwebassets\\font\\Shabnam.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Shabnam.woff",
+      "PackagePath": "staticwebassets\\font\\Shabnam.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Shabnam.woff2",
+      "PackagePath": "staticwebassets\\font\\Shabnam.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Bold.eot",
+      "PackagePath": "staticwebassets\\font\\Vazir-Bold.eot"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Bold.ttf",
+      "PackagePath": "staticwebassets\\font\\Vazir-Bold.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Bold.woff",
+      "PackagePath": "staticwebassets\\font\\Vazir-Bold.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Bold.woff2",
+      "PackagePath": "staticwebassets\\font\\Vazir-Bold.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Light.eot",
+      "PackagePath": "staticwebassets\\font\\Vazir-Light.eot"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Light.ttf",
+      "PackagePath": "staticwebassets\\font\\Vazir-Light.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Light.woff",
+      "PackagePath": "staticwebassets\\font\\Vazir-Light.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Light.woff2",
+      "PackagePath": "staticwebassets\\font\\Vazir-Light.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Medium.eot",
+      "PackagePath": "staticwebassets\\font\\Vazir-Medium.eot"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Medium.ttf",
+      "PackagePath": "staticwebassets\\font\\Vazir-Medium.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Medium.woff",
+      "PackagePath": "staticwebassets\\font\\Vazir-Medium.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Medium.woff2",
+      "PackagePath": "staticwebassets\\font\\Vazir-Medium.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Thin.eot",
+      "PackagePath": "staticwebassets\\font\\Vazir-Thin.eot"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Thin.ttf",
+      "PackagePath": "staticwebassets\\font\\Vazir-Thin.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Thin.woff",
+      "PackagePath": "staticwebassets\\font\\Vazir-Thin.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir-Thin.woff2",
+      "PackagePath": "staticwebassets\\font\\Vazir-Thin.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir.eot",
+      "PackagePath": "staticwebassets\\font\\Vazir.eot"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir.ttf",
+      "PackagePath": "staticwebassets\\font\\Vazir.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir.woff",
+      "PackagePath": "staticwebassets\\font\\Vazir.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\Vazir.woff2",
+      "PackagePath": "staticwebassets\\font\\Vazir.woff2"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\iranyekanwebregularfanum.eot",
+      "PackagePath": "staticwebassets\\font\\iranyekanwebregularfanum.eot"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\iranyekanwebregularfanum.ttf",
+      "PackagePath": "staticwebassets\\font\\iranyekanwebregularfanum.ttf"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\font\\iranyekanwebregularfanum.woff",
+      "PackagePath": "staticwebassets\\font\\iranyekanwebregularfanum.woff"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\js\\datePickerMainPage.js",
+      "PackagePath": "staticwebassets\\js\\datePickerMainPage.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\js\\datepicker_AddOrEditReserve.js",
+      "PackagePath": "staticwebassets\\js\\datepicker_AddOrEditReserve.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\js\\datepicker_folio.js",
+      "PackagePath": "staticwebassets\\js\\datepicker_folio.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\js\\datepicker_report_passenger.js",
+      "PackagePath": "staticwebassets\\js\\datepicker_report_passenger.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\js\\datepicker_report_reserve.js",
+      "PackagePath": "staticwebassets\\js\\datepicker_report_reserve.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\js\\datepicker_reserveTable.js",
+      "PackagePath": "staticwebassets\\js\\datepicker_reserveTable.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\js\\inputValidator.js",
+      "PackagePath": "staticwebassets\\js\\inputValidator.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\js\\js.js",
+      "PackagePath": "staticwebassets\\js\\js.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap-bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-bundle.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\datetimepicker.js",
+      "PackagePath": "staticwebassets\\lib\\datetimepicker.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\lib\\vue.js",
+      "PackagePath": "staticwebassets\\lib\\vue.js"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\test.html",
+      "PackagePath": "staticwebassets\\test.html"
+    },
+    {
+      "Id": "E:\\peyman\\hotel artemis\\aspnetcore\\21\\hotelsimorgh\\wwwroot\\test2.html",
+      "PackagePath": "staticwebassets\\test2.html"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.hotelsimorgh.props",
+      "PackagePath": "build\\hotelsimorgh.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.hotelsimorgh.props",
+      "PackagePath": "buildMultiTargeting\\hotelsimorgh.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.hotelsimorgh.props",
+      "PackagePath": "buildTransitive\\hotelsimorgh.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.hotelsimorgh.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

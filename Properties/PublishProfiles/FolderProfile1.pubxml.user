@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\peyman\hotel artemis\aspnetcore\21\hotelsimorgh\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2023-08-10T10:43:43.1620952Z;True|2023-08-10T11:54:43.1448362+03:30;True|2023-08-10T11:42:30.8923170+03:30;True|2023-08-10T11:32:21.4489650+03:30;True|2023-07-31T00:09:45.3643488+03:30;True|2023-07-18T19:52:07.8082035+03:30;True|2023-07-17T20:21:21.9108328+03:30;True|2023-07-17T20:08:42.7351029+03:30;True|2023-07-17T19:57:20.7446287+03:30;True|2023-07-17T19:42:26.0745391+03:30;True|2023-07-17T14:16:19.9026539+03:30;True|2023-07-16T15:03:19.5005390+03:30;True|2023-07-16T14:16:53.0403826+03:30;True|2023-07-16T14:16:41.7988000+03:30;True|2023-07-15T13:44:02.2200426+03:30;True|2023-07-15T00:34:33.1209696+03:30;True|2023-07-03T22:45:29.7605971+03:30;True|2023-06-30T18:42:08.7076490+03:30;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
